@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Prediction Result</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>🎯 Prediction Result</h1>
+
+      {% if prediction=="Sunny" %}
+      <h2 class="sunny">☀️ SUNNY</h2>
+      {% endif %} {% if prediction=="Cloudy" %}
+      <h2 class="cloudy">☁️ CLOUDY</h2>
+      {% endif %} {% if prediction=="Rainy" %}
+      <h2 class="rainy">🌧 RAINY</h2>
+      {% endif %}
+
+      <div class="graph-container">
+        <h3>📊 Prediction Visualization</h3>
+
+        <img src="{{ chart }}" class="chart" />
+      </div>
+
+      <a href="/" class="btn"> 🔄 Predict Again </a>
+    </div>
+  </body>
+</html>
